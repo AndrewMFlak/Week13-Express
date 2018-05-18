@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FriendFinderHome</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="../server.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>
+                Find Some Friends Today!!!!
+            </h1>
+            <br>
+            <h3>
+                Tired of trolling twitter all day?
+            </h3>
+            <br>
+            <h3>
+                Fill out the survey to find potential friends you are most compatible with!
+            </h3>
+            <p><a class="btn btn-primary btn-lg" href="/Survey" role="button">Yes I would like some friends</a></p>
+            <p><a class="btn btn-primary btn-lg" href="/Survey" role="button">No I am content to play by myself</a></p>
+            <!-- <a href="/Survey"><button class="btn btn-danger btn-lg"><span class="label label-info"></span></button></a> -->
+        </div>
+        <div class="row">
+            <a href="#">          |</a>
+            <a href="#">          </a>
+        </div>
+    </div>
+    <script>
+    require("server.js")(app);
+    </script>
+</body>
+
+</html>
