@@ -229,6 +229,16 @@
             </p>
         </div>
     </footer>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>
+                Closest Friend Match
+            </h4>
+            <div class="divider"></div>
+            <h5 id="userMatch"></h5>
+            <img id="userMatchImage" class="materialboxed" width="650" src="">
+        </div>
+    </div>
     </div>
     </div>
     <script type="text/javascript">
@@ -238,39 +248,30 @@
             var newFriend = {
                 name: $("#name").val().trim(),
                 image: $("#image").val().trim(),
-                Question1: $("#q1").val().trim(),
-                Question2: $("#q2").val().trim(),
-                Question3: $("#q3").val().trim(),
-                Question4: $("#q4").val().trim(),
-                Question5: $("#q5").val().trim(),
-                Question6: $("#q6").val().trim(),
-                Question7: $("#q7").val().trim(),
-                Question8: $("#q8").val().trim(),
-                Question9: $("#q9").val().trim(),
-                Question10: $("#q10").val().trim()
+                scores: [
+                    $("#q1").val().trim(),
+                    $("#q2").val().trim(),
+                    $("#q3").val().trim(),
+                    $("#q4").val().trim(),
+                    $("#q5").val().trim(),
+                    $("#q6").val().trim(),
+                    $("#q7").val().trim(),
+                    $("#q8").val().trim(),
+                    $("#q9").val().trim(),
+                    $("#q10").val().trim()
+
+                ]
             };
             console.log(newFriend);
 
-            $.post("/api/friends", newFriend, function (data) {
-                if (data) {
-                    alert("Adding New Friend");
-                }
+            $.post("/api/friends", newFriend).done(function (data) {
+                $("#userMatch").html(data.matchName);
+                $("#userMatchImage").attr("src", data.matchImage);
 
-                else ("Sorry we have some sort of internal malfunction!")
-
-                $("#name").val("");
-                $("#image").val("");
-                $("#q1").val("");
-                $("#q2").val("");
-                $("#q3").val("");
-                $("#q4").val("");
-                $("#q5").val("");
-                $("#q6").val("");
-                $("#q7").val("");
-                $("#q8").val("");
-                $("#q9").val("");
-                $("#q10").val("");
+                $("#modal1").modal("open");
             });
+
+
 
         });
     </script>
