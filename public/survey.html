@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Make Some Friends Today!</h1>
+            <br>
+            <h3>Answer below questions to help us match you with compatible friends.</h3>
+            <hr>
+            <a href="/Home">
+                <button class="btn btn-info btn-lg">
+                    <span class="fa fa-plus"></span>Return Home</button>
+            </a>
+            <a href="/Self">
+                <button class="btn btn-danger btn-lg">
+                    <span class="fa fa-plus"></span>Nevermind I want to go play by myself</button>
+            </a>
+            <a href="/View">
+                <button class="btn btn-caution btn-lg">
+                    <span class="fa fa-plus"></span>View our elite friend candidates</button>
+            </a>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <strong>Friend Finder Survey</strong>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <form method="POST" role="form">
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imageURL">Image</label>
+                        <input type="text" class="form-control" id="image">
+                    </div>
+                    <h4>Compatibility Questions</h4>
+                    <div>
+                        <h3>
+                            <strong>Question 1</strong>
+                        </h3>
+                        <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+                        <select class="chosen-select" id="q1">
+                            <option value></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3 (Meh)</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>
+                            <strong>Question 2</strong>
+                        </h3>
+                        <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+                        <select class="chosen-select" id="q2">
+                            <option value></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3 (Meh)</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>
+                            <strong>Question 3</strong>
+                        </h3>
+                        <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+                        <select class="chosen-select" id="q3">
+                            <option value></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3 (Meh)</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>
+                            <strong>Question 4</strong>
+                        </h3>
+                        <h4>You rarely do something just out of sheer curiosity.</h4>
+                        <select class="chosen-select" id="q4">
+                            <option value></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3 (Meh)</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>
+                            <strong>Question 5</strong>
+                        </h3>
+                        <h4>People can rarely upset you.</h4>
+                        <select class="chosen-select" id="q5">
+                            <option value></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3 (Meh)</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>
+                            <strong>Question 6</strong>
+                        </h3>
+                        <h4>It is often difficult for you to relate to other people’s feelings.</h4>
+                        <select class="chosen-select" id="q6">
+                            <option value></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3 (Meh)</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>
+                            <strong>Question 7</strong>
+                        </h3>
+                        <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+                        <select class="chosen-select" id="q7">
+                            <option value></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3 (Meh)</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>
+                            <strong>Question 8</strong>
+                        </h3>
+                        <h4>You rarely get carried away by fantasies and ideas.</h4>
+                        <select class="chosen-select" id="q8">
+                            <option value></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3 (Meh)</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>
+                            <strong>Question 9</strong>
+                        </h3>
+                        <h4>You rarely get carried away by fantasies and ideas.</h4>
+                        <select class="chosen-select" id="q9">
+                            <option value></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3 (Meh)</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>
+                            <strong>Question 10</strong>
+                        </h3>
+                        <h4>You rarely get carried away by fantasies and ideas.</h4>
+                        <select class="chosen-select" id="q10">
+                            <option value></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3 (Meh)</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+            </div>
+        </div>
+
+        <!-- 
+        <div class="form-group">
+            <label for="phoneNum">Phone Number</label>
+            <input type="text" class="form-control" id="phoneNum">
+        </div>
+
+        <div class="form-group">
+            <label for="emailAdd">Email Address</label>
+            <input type="text" class="form-control" id="emailAdd">
+        </div> -->
+        </form>
+        <br>
+        <div class="text-right">
+            <button type="submit" class="btn btn-primary btn-md" id="submit-btn">
+                <span class="fa fa-fire"></span> Submit Survey Responses</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <a href="/api/friends">API Friend Link</a> |
+                <a href="https://andrewmflak.github.io/Week13-Express/">Github Repo</a>
+            </p>
+        </div>
+    </footer>
+    </div>
+    </div>
+    <script type="text/javascript">
+
+        $("#submit-btn").on("click", function (event) {
+            event.preventDefault();
+            var newFriend = {
+                name: $("#name").val().trim(),
+                image: $("#image").val().trim(),
+                Question1: $("#q1").val().trim(),
+                Question2: $("#q2").val().trim(),
+                Question3: $("#q3").val().trim(),
+                Question4: $("#q4").val().trim(),
+                Question5: $("#q5").val().trim(),
+                Question6: $("#q6").val().trim(),
+                Question7: $("#q7").val().trim(),
+                Question8: $("#q8").val().trim(),
+                Question9: $("#q9").val().trim(),
+                Question10: $("#q10").val().trim()
+            };
+            console.log(newFriend);
+
+            $.post("/api/friends", newFriend, function (data) {
+                if (data) {
+                    alert("Adding New Friend");
+                }
+
+                else ("Sorry we have some sort of internal malfunction!")
+
+                $("#name").val("");
+                $("#image").val("");
+                $("#q1").val("");
+                $("#q2").val("");
+                $("#q3").val("");
+                $("#q4").val("");
+                $("#q5").val("");
+                $("#q6").val("");
+                $("#q7").val("");
+                $("#q8").val("");
+                $("#q9").val("");
+                $("#q10").val("");
+            });
+
+        });
+    </script>
+</body>
+
+</html>

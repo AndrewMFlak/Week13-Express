@@ -29,18 +29,31 @@
             <h3>
                 Fill out the survey to find potential friends you are most compatible with!
             </h3>
-            <p><a class="btn btn-primary btn-lg" href="/Survey" role="button">Yes I would like some friends</a></p>
-            <p><a class="btn btn-primary btn-lg" href="/Survey" role="button">No I am content to play by myself</a></p>
-            <!-- <a href="/Survey"><button class="btn btn-danger btn-lg"><span class="label label-info"></span></button></a> -->
+            <div class="text-center"></div>
+            <a href="/Survey">
+                <button class="btn btn-lg btn-primary">
+                    <span class="fa fa-list-alt"></span>Yes I would like some friends</button>
+            </a>
+            <a href="/Self">
+                <button class="btn btn-lg btn-danger">
+                    <span class="fa fa-credit-card"></span> No I am content to play by myself</button>
+            </a>
+            <a href="/View">
+                <button class="btn btn-lg btn-caution">
+                    <span class="fa fa-list-alt"></span>View friend candidates</button>
+            </a>
         </div>
-        <div class="row">
-            <a href="#">          |</a>
-            <a href="#">          </a>
+        <!-- <a href="/Survey"><button class="btn btn-danger btn-lg"><span class="label label-info"></span></button></a> -->
+    </div>
+    <div class="footer">
+        <div class="container">
+            <p>
+                <a href="/api/friends">API Table Link</a> |
+                <a href="https://andrewmflak.github.io/Week13-Express/">Github Repo</a>
+            </p>
         </div>
     </div>
-    <script>
-    require("server.js")(app);
-    </script>
+    </div>
 </body>
 
 </html>

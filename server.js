@@ -1,15 +1,18 @@
-var bp = require("body-parser");
-
 var express = require("express");
-
-var path = require("path");
-
-var html = require("routing/htmlRoutes.js");
-var api = require("routing/apiRoutes.js");
+var bodyParser = require("body-parser");
 
 var app = express();
+
 var PORT = process.env.PORT || 8080;
 
-app.listen(PORT, function() {
-    console.log("App listening on https://localhost:" + PORT);
+app.use(bodyParser.urlencoded({ extended: true}));
+
+app.use(bodyParser.json());
+
+require("./routing/htmlRoutes")(app);
+
+require("./routing/apiRoutes")(app);
+
+app.listen(PORT, function () {
+    console.log("App listening on http://localhost:" + PORT);
 });

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FriendFinderView</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="text-center"></div>
+            <h1>
+                Meet your new friend candidates
+            </h1>
+            <a href="/Home">
+                <button class="btn btn-lg btn-info">
+                    <span class="fa fa-list-alt"></span>Return Home</button>
+            </a>
+            <a href="/Survey">
+                <button class="btn btn-lg btn-primary">
+                    <span class="fa fa-list-alt"></span>Join our list of elite friend candidates</button>
+            </a>
+            <a href="/Self">
+                <button class="btn btn-lg btn-danger">
+                    <span class="fa fa-credit-card"></span>I would rather just go play by myself</button>
+            </a>
+        </div>
+        <!-- <a href="/Survey"><button class="btn btn-danger btn-lg"><span class="label label-info"></span></button></a> -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Current Friends in Use -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Friend Candidates</h4>
+                    </div>
+                    <div class="panel-body" id="friendSection">
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="container">
+                        <div class="panel panel-default">
+                            <div class="panel panel-primary">
+                                <div class="panel-body" id="friendContainer">
+
+                                </div>
+                            </div>
+                            <p>
+                                <a href="/api/friends">API Table Link</a> |
+                                <a href="https://andrewmflak.github.io/Week13-Express/">Github Repo</a> | 
+                                <a href="*" id="clear">Clear Friends</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+<script type="text/javascript">
+
+    function runFriendQuery() {
+        var currentURL = window.location.origin;
+
+        $.ajax({ url: currentURL, method: "GET" }).then(function (friendData) {
+            console.log("<----------------------------------->");
+            console.log("URL: " + currentURL + "/api/friends");
+            console.log("<----------------------------------->");
+
+            console.log(friendData);
+            console.log("<----------------------------------->");
+
+            for (var i = 0; i < friendData.length; i++) {
+                var friendSection = $("<div>");
+                // var friendTotal = (friendData.Question1 + friendData.Question2 + friendData.Question3 + friendData.Question4 + friendData.Question5 + friendData.Question6 + friendData.Question7 + friendData.Question8 + friendData.Question9 + friendData.Question10);
+                friendSection.addClass("well");
+                friendSection.attr("id", "friendWell-" + i + 1);
+                $("#friendSection").append(friendSection);
+
+
+                var friendNumber = i + 1;
+
+                $("#friendWell-" + i + 1).append("<h2><span class='label label-primary'>" + friendNumber + "</span> | " + friendData[i].friendData + "</h2>");
+            }
+        });
+    }
+    function clearFriends() {
+        var currentURL = window.location.origin;
+        $.ajax({ url: currentURL + "/api/clear", method: "POST" });
+    }
+
+    $("#clear").on("click", function () {
+        alert("Clearing...");
+        clearFriends();
+        location.reload();
+    });
+
+    runFriendQuery();
+</script>
+
+</html>
